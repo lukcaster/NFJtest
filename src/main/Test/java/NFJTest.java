@@ -32,19 +32,14 @@ public class NFJTest {
     public void NFJMainTest() throws InterruptedException, IOException, AWTException {
         //Cookies
 
-        driver.findElement(By.xpath("/html/body/nfj-root/nfj-layout/div/ngx-loadable/nfj-lazy-layout/nfj-fixed-banner/section/nfj-cookie-information/div/div/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"navbarNav\"]/ul[2]/li[3]/common-lazy-render/nfj-navbar-login-wrapper/nfj-navbar-profile-dropdown")).click();
 
         //Check if I am logged in
-        String MyEmail = "gruchala.lukasz1@gmail.com";
-        driver.findElement(By.xpath("//*[@id=\"navbarNav\"]/ul[2]/li[3]/common-lazy-render/nfj-navbar-candidate-wrapper/nfj-navbar-profile-dropdown/div/span/span")).click();
+        //String MyEmail = "gruchala.lukasz1@gmail.com";
+        driver.findElement(By.xpath("//*[@id=\"navbarNav\"]/ul[2]/li[3]/common-lazy-render/nfj-navbar-login-wrapper/nfj-navbar-profile-dropdown/div/span")).click();
+        WebElement LogIn = driver.findElement(By.xpath("//*[@id=\"navbarNav\"]/ul[2]/li[3]/common-lazy-render/nfj-navbar-login-wrapper/nfj-navbar-profile-dropdown/div/span/span"));
+        System.out.print(LogIn);
 
-        if (driver.findElement(By.xpath("//*[@id=\"navbar-login\"]/span")).isEnabled())
-        {
-            driver.findElement(By.xpath("//*[@id=\"navbar-login\"]/span.click")).click();
-            TimeUnit.SECONDS.sleep(1);
-            driver.findElement(By.xpath("/html/body/nfj-root/nfj-layout/nfj-auth-loader/ngx-loadable/nfj-auth-handler/div/div/nfj-auth-login/nfj-auth-shell/nfj-social-login-box/div/div[4]/button")).click();
-            driver.findElement(By.xpath("//*[@id=\"profileIdentifier\"]")).click();
-        } else {Assert.fail();
         }
 
 
@@ -52,6 +47,6 @@ public class NFJTest {
 
 
     }
-}
+
 
 
